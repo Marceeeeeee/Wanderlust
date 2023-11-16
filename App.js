@@ -4,27 +4,22 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
-        <View style={{
-          height: 360
-        }}>
-          <Image source={require('./img/SunsetVilla.jpg')} style={{
-            height: 220, width: 360, margin: 20, marginStart: 25, borderRadius: 16
-          }} />
+    <SafeAreaView style={{ flex: 1}}>
+      <View style={{flex:1, backgroundColor:'grey'}}>
+      </View>
+      <View style={{flex:2}}>
+      <ScrollView >
+        <View style={styleFull.card}>
+          <Image source={require('./img/SunsetVilla.jpg')} style={styleFull.cardImage} />
           <View>
-            <Text style={{
-              marginStart: 30, fontSize: 18, fontWeight: 'bold'
-            }}>{"Sunset Villa\n"}</Text>
-
+            <Text style={styleFull.cardText}>{"Sunset Villa\n"}</Text>
           </View>
-          <View style={{ marginStart: 260, backgroundColor: 'orange', width: 100, borderRadius: 16 }}>
+          <View style={styleFull.cardButton}>
             <Text style={{ margin: 5, marginStart: 28 }}>
               explore
             </Text>
           </View>
         </View>
-
         <View style={styleRight.card}>
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Serenity Cottage\n"}</Text>
@@ -36,7 +31,6 @@ export default function App() {
           </View>
           <Image source={require('./img/SerenityCottage.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/VelvetValleyVilla.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -48,9 +42,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Blue Sky Bungalow"}</Text>
             <View style={styleRight.cardButton}>
@@ -73,9 +65,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Whispering Willow House"}</Text>
             <View style={styleRight.cardButton}>
@@ -86,7 +76,6 @@ export default function App() {
           </View>
           <Image source={require('./img/WhisperingWillowHouse.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/EnchantedEchoesHome.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -98,26 +87,17 @@ export default function App() {
             </View>
           </View>
         </View>
-
-        <View style={{
-          height: 360
-        }}>
-          <Image source={require('./img/SecretGarden.jpg')} style={{
-            height: 220, width: 360, margin: 20, marginStart: 25, borderRadius: 16
-          }} />
+        <View style={styleFull.card}>
+          <Image source={require('./img/SecretGarden.jpg')} style={styleFull.cardImage} />
           <View>
-            <Text style={{
-              marginStart: 30, fontSize: 18, fontWeight: 'bold'
-            }}>{"secret Garden"}</Text>
-
+            <Text style={styleFull.cardText}>{"secret Garden"}</Text>
           </View>
-          <View style={{ marginStart: 260, backgroundColor: 'orange', width: 100, borderRadius: 16 }}>
+          <View style={styleFull.cardButton}>
             <Text style={{ margin: 5, marginStart: 28 }}>
               explore
             </Text>
           </View>
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/MountainMajestyManor.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -128,9 +108,7 @@ export default function App() {
               </Text>
             </View>
           </View>
-
         </View>
-
         <View style={styleRight.card}>
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Starlight Villa\n"}</Text>
@@ -142,7 +120,6 @@ export default function App() {
           </View>
           <Image source={require('./img/StarlightVilla.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/CherryBlossomCottage.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -154,9 +131,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Orchid Oasis\n"}</Text>
             <View style={styleRight.cardButton}>
@@ -167,7 +142,6 @@ export default function App() {
           </View>
           <Image source={require('./img/OrchidOasis.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/RiverviewRetreat.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -179,9 +153,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Evergreen Escape\n"}</Text>
             <View style={styleRight.cardButton}>
@@ -192,7 +164,6 @@ export default function App() {
           </View>
           <Image source={require('./img/EvergreenEscape.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/CrimsonCrestChalet.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -204,30 +175,18 @@ export default function App() {
             </View>
           </View>
         </View>
-
-
-        <View style={{
-          height: 360
-        }}>
-          <Image source={require('./img/SeasideSerenityHouse.jpg')} style={{
-            height: 220, width: 360, margin: 20, marginStart: 25, borderRadius: 16
-          }} />
+        <View style={styleFull.card}>
+          <Image source={require('./img/SeasideSerenityHouse.jpg')} style={styleFull.cardImage} />
           <View>
-            <Text style={{
-              marginStart: 30, fontSize: 18, fontWeight: 'bold'
-            }}>{"Seaside Serenity House"}</Text>
-
+            <Text style={styleFull.cardText}>{"Seaside Serenity House"}</Text>
           </View>
-          <View style={{ marginStart: 260, backgroundColor: 'orange', width: 100, borderRadius: 16 }}>
+          <View style={styleFull.cardButton}>
             <Text style={{ margin: 5, marginStart: 28 }}>
               explore
             </Text>
           </View>
         </View>
-
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Hearthstone Haven"}</Text>
             <View style={styleRight.cardButton}>
@@ -238,7 +197,6 @@ export default function App() {
           </View>
           <Image source={require('./img/HearthstoneHaven.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/BreezyBluffBungalow.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -250,9 +208,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Golden Gate Home"}</Text>
             <View style={styleRight.cardButton}>
@@ -263,7 +219,6 @@ export default function App() {
           </View>
           <Image source={require('./img/GoldenGateHome.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/CrystalCoveCottage.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -275,9 +230,7 @@ export default function App() {
             </View>
           </View>
         </View>
-
         <View style={styleRight.card}>
-
           <View style={styleRight.cardColumn}>
             <Text style={styleRight.cardText}>{"Rosewood Residence"}</Text>
             <View style={styleRight.cardButton}>
@@ -288,7 +241,6 @@ export default function App() {
           </View>
           <Image source={require('./img/RosewoodResidenc.jpg')} style={styleRight.cardImage} />
         </View>
-
         <View style={style.card}>
           <Image source={require('./img/SunflowerSanctuary.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
@@ -301,6 +253,8 @@ export default function App() {
           </View>
         </View>
       </ScrollView>
+      </View>
+      
 
     </SafeAreaView>
   );
@@ -369,5 +323,33 @@ const styleRight = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: 'orange',
     alignContent: 'center'
+  },
+})
+
+const styleFull = StyleSheet.create({
+  card: {
+    height: 360
+  },
+  cardImage: {
+    height: 220, 
+    width: 360, 
+    margin: 20, 
+    marginStart: 25, 
+    borderRadius: 16
+  },
+  cardColumn: {
+    width: 190,
+    flexDirection: 'column'
+  },
+  cardText: {
+    marginStart: 30, 
+    fontSize: 18, 
+    fontWeight: 'bold'
+  },
+  cardButton: {
+    marginStart: 260, 
+    backgroundColor: 'orange', 
+    width: 100, 
+    borderRadius: 16 
   },
 })
