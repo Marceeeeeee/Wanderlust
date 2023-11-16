@@ -1,18 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1}}>
-      <View style={{flex:1, backgroundColor:'grey'}}>
+    <View style={{flex:1}}> 
+      <View style={{flex:1.5}}>
+        <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{flex:1}}>
+          <View style={{flex:1, backgroundColor: '#f2fdfd',opacity: 0.85,borderRadius: 20,margin:45, marginBottom:60,marginTop:80}}>
+            <Text style={{flex:1,height: 'auto',textAlign: 'center',fontSize:32, fontWeight: 'bold',margin:20}}>
+              {"We are \nWanderlust"}
+            </Text>
+            <Text style={{flex:1,textAlign: 'center',fontSize:16, marginStart:10, marginEnd:10}}>
+              we want to bring dreams on earth by letting you rent ours property
+            </Text>
+          </View>
+        </ImageBackground>
       </View>
       <View style={{flex:2}}>
-      <ScrollView >
+        <View style={{height:2,backgroundColor: 'black'}}></View>
+        <ImageBackground source={require('./img/artwork.png')} style={{flex:1}}>
+        <ScrollView style={style.scrollview}>
         <View style={styleFull.card}>
           <Image source={require('./img/SunsetVilla.jpg')} style={styleFull.cardImage} />
           <View>
-            <Text style={styleFull.cardText}>{"Sunset Villa\n"}</Text>
+            <Text style={styleFull.cardText}>{"Sunset Villa"}</Text>
           </View>
           <View style={styleFull.cardButton}>
             <Text style={{ margin: 5, marginStart: 28 }}>
@@ -22,7 +34,7 @@ export default function App() {
         </View>
         <View style={styleRight.card}>
           <View style={styleRight.cardColumn}>
-            <Text style={styleRight.cardText}>{"Serenity Cottage\n"}</Text>
+            <Text style={styleRight.cardText}>{"Serenity Cottage"}</Text>
             <View style={styleRight.cardButton}>
               <Text style={{ margin: 5, marginStart: 28 }}>
                 explore
@@ -34,7 +46,7 @@ export default function App() {
         <View style={style.card}>
           <Image source={require('./img/VelvetValleyVilla.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
-            <Text style={style.cardText}>{"Velvet Valley Villa\n"}</Text>
+            <Text style={style.cardText}>{"Velvet Valley Villa"}</Text>
             <View style={style.cardButton}>
               <Text style={{ margin: 5, marginStart: 28 }}>
                 explore
@@ -79,7 +91,7 @@ export default function App() {
         <View style={style.card}>
           <Image source={require('./img/EnchantedEchoesHome.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
-            <Text style={style.cardText}>{"Enchanted Echoes \nHome"}</Text>
+            <Text style={style.cardText}>{"Enchanted Echoes Home"}</Text>
             <View style={style.cardButton}>
               <Text style={{ margin: 5, marginStart: 28 }}>
                 explore
@@ -145,7 +157,7 @@ export default function App() {
         <View style={style.card}>
           <Image source={require('./img/RiverviewRetreat.jpg')} style={style.cardImage} />
           <View style={style.cardColumn}>
-            <Text style={style.cardText}>{"Riverview Retreat\n"}</Text>
+            <Text style={style.cardText}>{"Riverview Retreat"}</Text>
             <View style={style.cardButton}>
               <Text style={{ margin: 5, marginStart: 28 }}>
                 explore
@@ -155,7 +167,7 @@ export default function App() {
         </View>
         <View style={styleRight.card}>
           <View style={styleRight.cardColumn}>
-            <Text style={styleRight.cardText}>{"Evergreen Escape\n"}</Text>
+            <Text style={styleRight.cardText}>{"Evergreen Escape"}</Text>
             <View style={styleRight.cardButton}>
               <Text style={{ margin: 5, marginStart: 28 }}>
                 explore
@@ -253,29 +265,31 @@ export default function App() {
           </View>
         </View>
       </ScrollView>
+        </ImageBackground>
       </View>
-      
-
-    </SafeAreaView>
+      </View>
   );
 }
 
 const style = StyleSheet.create({
   scrollview: {
     flex: 1,
-    marginTop: 40
+    background: './img/artwork-2.png',
   },
   card: {
     flexDirection: 'row',
+    backgroundColor: 'white',
+    margin: 16,
+    borderRadius: 24
   },
   cardImage: {
-    marginStart: 30,
     width: 180,
     height: 220,
     margin: 20,
     borderRadius: 16
   },
   cardColumn: {
+    width: 155,
     flexDirection: 'column'
   },
   cardText: {
@@ -287,7 +301,7 @@ const style = StyleSheet.create({
   cardButton: {
     width: 100,
     height: 30,
-    marginTop: 100,
+    marginTop: 90,
     marginStart: 10,
     borderRadius: 16,
     backgroundColor: 'orange',
@@ -298,6 +312,9 @@ const style = StyleSheet.create({
 const styleRight = StyleSheet.create({
   card: {
     flexDirection: 'row',
+    backgroundColor: 'white',
+    margin: 16,
+    borderRadius: 24
   },
   cardImage: {
     width: 180,
@@ -306,12 +323,12 @@ const styleRight = StyleSheet.create({
     borderRadius: 16
   },
   cardColumn: {
-    width: 190,
+    width: 155,
     flexDirection: 'column'
   },
   cardText: {
     marginTop: 40,
-    marginStart: 30,
+    marginStart: 20,
     fontSize: 18,
     fontWeight: 'bold'
   },
@@ -319,7 +336,7 @@ const styleRight = StyleSheet.create({
     width: 100,
     height: 30,
     marginTop: 90,
-    marginStart: 70,
+    marginStart: 50,
     borderRadius: 16,
     backgroundColor: 'orange',
     alignContent: 'center'
@@ -328,11 +345,14 @@ const styleRight = StyleSheet.create({
 
 const styleFull = StyleSheet.create({
   card: {
-    height: 360
+    height: 360,
+    backgroundColor: 'white',
+    margin: 16,
+    borderRadius: 24
   },
   cardImage: {
     height: 220, 
-    width: 360, 
+    width: 335, 
     margin: 20, 
     marginStart: 25, 
     borderRadius: 16
