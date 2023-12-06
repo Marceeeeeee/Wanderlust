@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
+    <Stack.Navigator>
+      <View style={{ flex: 1 }}>
       <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
         <View style={{ flex: 3, backgroundColor: 'ivory', opacity: 0.95, borderRadius: 20, margin: 15, marginBottom: 20, marginTop: 70 }}>
           <Text style={{ flex: 1, height: 'auto', textAlign: 'center', fontSize: 32, fontWeight: 'bold', marginTop: 10 }}>
@@ -270,6 +272,8 @@ export default function App() {
 
       </ImageBackground>
     </View>
+    </Stack.Navigator>
+    
   );
 }
 
@@ -285,7 +289,7 @@ const style = StyleSheet.create({
     borderRadius: 24
   },
   cardImage: {
-    width: 180,
+    width: '45%',
     height: 220,
     margin: 20,
     borderRadius: 16,
@@ -319,7 +323,7 @@ const styleRight = StyleSheet.create({
     borderRadius: 24
   },
   cardImage: {
-    width: 180,
+    width: '45%',
     height: 220,
     margin: 20,
     borderRadius: 16
@@ -354,7 +358,7 @@ const styleFull = StyleSheet.create({
   },
   cardImage: {
     height: 220,
-    width: 335,
+    width: '88%',
     margin: 20,
     marginStart: 25,
     borderRadius: 16
@@ -369,7 +373,7 @@ const styleFull = StyleSheet.create({
     fontWeight: 'bold'
   },
   cardButton: {
-    marginStart: 260,
+    marginStart: '65%',
     backgroundColor: 'orange',
     width: 100,
     borderRadius: 16
