@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+
+
 function PropertyList() {
   return
   <ScrollView style={style.scrollview}>
@@ -251,9 +253,9 @@ function PropertyList() {
 }
 
 export default function App() {
-  return (
-    <View style={{ flex: 1 }}>
-      <View style={{flex: 2}}>
+  return
+  <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
       <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
         <View style={{ flex: 3, backgroundColor: 'ivory', opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90 }}>
           <Text style={{ flex: 1, height: 'auto', textAlign: 'center', fontSize: 32, fontWeight: 'bold', marginTop: 40 }}>
@@ -270,9 +272,7 @@ export default function App() {
             We want to bring dreams on earth by letting you rent ours property
           </Text>
       </View>
-      
     </View>
-  );
 }
 
 const style = StyleSheet.create({
@@ -287,7 +287,7 @@ const style = StyleSheet.create({
     borderRadius: 24
   },
   cardImage: {
-    width: 180,
+    width: '45%',
     height: 220,
     margin: 20,
     borderRadius: 16,
@@ -321,7 +321,7 @@ const styleRight = StyleSheet.create({
     borderRadius: 24
   },
   cardImage: {
-    width: 180,
+    width: '45%',
     height: 220,
     margin: 20,
     borderRadius: 16
@@ -356,7 +356,7 @@ const styleFull = StyleSheet.create({
   },
   cardImage: {
     height: 220,
-    width: 335,
+    width: '88%',
     margin: 20,
     marginStart: 25,
     borderRadius: 16
@@ -371,7 +371,7 @@ const styleFull = StyleSheet.create({
     fontWeight: 'bold'
   },
   cardButton: {
-    marginStart: 260,
+    marginStart: '65%',
     backgroundColor: 'orange',
     width: 100,
     borderRadius: 16
