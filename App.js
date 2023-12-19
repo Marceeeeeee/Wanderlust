@@ -1,274 +1,276 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+function PropertyList() {
+  return
+  <ScrollView style={style.scrollview}>
+    <View style={styleFull.card}>
+      <Image source={require('./img/SunsetVilla.jpg')} style={styleFull.cardImage} />
+      <View>
+        <Text style={styleFull.cardText}>{"Sunset Villa"}</Text>
+      </View>
+      <View style={styleFull.cardButton}>
+        <Text style={{ margin: 5, marginStart: 28 }}>
+          explore
+        </Text>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Serenity Cottage"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/SerenityCottage.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/VelvetValleyVilla.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Velvet Valley Villa"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Blue Sky Bungalow"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/BlueSkyBungalow.jpg')} style={styleRight.cardImage} />
+    </View>
 
+    <View style={style.card}>
+      <Image source={require('./img/MapleGroveCottageHouse.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Maple Grove \nCottage House"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Whispering Willow House"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/WhisperingWillowHouse.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/EnchantedEchoesHome.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Enchanted Echoes Home"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleFull.card}>
+      <Image source={require('./img/SecretGarden.jpg')} style={styleFull.cardImage} />
+      <View>
+        <Text style={styleFull.cardText}>{"secret Garden"}</Text>
+      </View>
+      <View style={styleFull.cardButton}>
+        <Text style={{ margin: 5, marginStart: 28 }}>
+          explore
+        </Text>
+      </View>
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/MountainMajestyManor.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Mountain Majesty Manor"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Starlight Villa\n"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/StarlightVilla.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/CherryBlossomCottage.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Cherry Blossom \nCottage"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Orchid Oasis\n"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/OrchidOasis.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/RiverviewRetreat.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Riverview Retreat"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Evergreen Escape"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/EvergreenEscape.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/CrimsonCrestChalet.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Crimson Crest \nChalet"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleFull.card}>
+      <Image source={require('./img/SeasideSerenityHouse.jpg')} style={styleFull.cardImage} />
+      <View>
+        <Text style={styleFull.cardText}>{"Seaside Serenity House"}</Text>
+      </View>
+      <View style={styleFull.cardButton}>
+        <Text style={{ margin: 5, marginStart: 28 }}>
+          explore
+        </Text>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Hearthstone Haven"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/HearthstoneHaven.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/BreezyBluffBungalow.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Breezy Bluff \nBungalow"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Golden Gate Home"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/GoldenGateHome.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/CrystalCoveCottage.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Crystal Cove \nCottage"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View style={styleRight.card}>
+      <View style={styleRight.cardColumn}>
+        <Text style={styleRight.cardText}>{"Rosewood Residence"}</Text>
+        <View style={styleRight.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+      <Image source={require('./img/RosewoodResidenc.jpg')} style={styleRight.cardImage} />
+    </View>
+    <View style={style.card}>
+      <Image source={require('./img/SunflowerSanctuary.jpg')} style={style.cardImage} />
+      <View style={style.cardColumn}>
+        <Text style={style.cardText}>{"Sunflower \nSanctuary"}</Text>
+        <View style={style.cardButton}>
+          <Text style={{ margin: 5, marginStart: 28 }}>
+            explore
+          </Text>
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+}
 
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
+      <View style={{flex: 2}}>
       <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
-        <View style={{ flex: 3, backgroundColor: 'ivory', opacity: 0.95, borderRadius: 20, margin: 15, marginBottom: 20, marginTop: 70 }}>
-          <Text style={{ flex: 1, height: 'auto', textAlign: 'center', fontSize: 32, fontWeight: 'bold', marginTop: 10 }}>
+        <View style={{ flex: 3, backgroundColor: 'ivory', opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90 }}>
+          <Text style={{ flex: 1, height: 'auto', textAlign: 'center', fontSize: 32, fontWeight: 'bold', marginTop: 40 }}>
             We are
           </Text>
-          <Text style={{ flex: 1, textAlign: 'center', fontSize: 40, fontWeight: '900', color: 'steelblue', marginTop: -40 }}>
+          <Text style={{ flex: 1, textAlign: 'center', fontSize: 40, fontWeight: '900', color: 'steelblue', marginTop: -40,marginBottom:40 }}>
             Wanderlust
           </Text>
-          <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
+        </View>
+      </ImageBackground>
+      </View>
+      <View style={{flex:3}}>
+      <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
             We want to bring dreams on earth by letting you rent ours property
           </Text>
-        </View>
-        <View style={{ flex: 8 }}>
-          <ScrollView style={style.scrollview}>
-            <View style={styleFull.card}>
-              <Image source={require('./img/SunsetVilla.jpg')} style={styleFull.cardImage} />
-              <View>
-                <Text style={styleFull.cardText}>{"Sunset Villa"}</Text>
-              </View>
-              <View style={styleFull.cardButton}>
-                <Text style={{ margin: 5, marginStart: 28 }}>
-                  explore
-                </Text>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Serenity Cottage"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/SerenityCottage.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/VelvetValleyVilla.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Velvet Valley Villa"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Blue Sky Bungalow"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/BlueSkyBungalow.jpg')} style={styleRight.cardImage} />
-            </View>
-
-            <View style={style.card}>
-              <Image source={require('./img/MapleGroveCottageHouse.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Maple Grove \nCottage House"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Whispering Willow House"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/WhisperingWillowHouse.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/EnchantedEchoesHome.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Enchanted Echoes Home"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleFull.card}>
-              <Image source={require('./img/SecretGarden.jpg')} style={styleFull.cardImage} />
-              <View>
-                <Text style={styleFull.cardText}>{"secret Garden"}</Text>
-              </View>
-              <View style={styleFull.cardButton}>
-                <Text style={{ margin: 5, marginStart: 28 }}>
-                  explore
-                </Text>
-              </View>
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/MountainMajestyManor.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Mountain Majesty Manor"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Starlight Villa\n"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/StarlightVilla.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/CherryBlossomCottage.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Cherry Blossom \nCottage"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Orchid Oasis\n"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/OrchidOasis.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/RiverviewRetreat.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Riverview Retreat"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Evergreen Escape"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/EvergreenEscape.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/CrimsonCrestChalet.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Crimson Crest \nChalet"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleFull.card}>
-              <Image source={require('./img/SeasideSerenityHouse.jpg')} style={styleFull.cardImage} />
-              <View>
-                <Text style={styleFull.cardText}>{"Seaside Serenity House"}</Text>
-              </View>
-              <View style={styleFull.cardButton}>
-                <Text style={{ margin: 5, marginStart: 28 }}>
-                  explore
-                </Text>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Hearthstone Haven"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/HearthstoneHaven.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/BreezyBluffBungalow.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Breezy Bluff \nBungalow"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Golden Gate Home"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/GoldenGateHome.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/CrystalCoveCottage.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Crystal Cove \nCottage"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View style={styleRight.card}>
-              <View style={styleRight.cardColumn}>
-                <Text style={styleRight.cardText}>{"Rosewood Residence"}</Text>
-                <View style={styleRight.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-              <Image source={require('./img/RosewoodResidenc.jpg')} style={styleRight.cardImage} />
-            </View>
-            <View style={style.card}>
-              <Image source={require('./img/SunflowerSanctuary.jpg')} style={style.cardImage} />
-              <View style={style.cardColumn}>
-                <Text style={style.cardText}>{"Sunflower \nSanctuary"}</Text>
-                <View style={style.cardButton}>
-                  <Text style={{ margin: 5, marginStart: 28 }}>
-                    explore
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </ScrollView>
-
-        </View>
-
-
-      </ImageBackground>
+      </View>
+      
     </View>
   );
 }
