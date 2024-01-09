@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
+const Tab = createMaterialBottomTabNavigator();
 
 function PropertyList() {
-  return
+  return(
   <ScrollView style={style.scrollview}>
+    <ImageBackground source={require('./img/artwork.png')}>
+      <View style={{height: 32}}></View>
     <View style={styleFull.card}>
       <Image source={require('./img/SunsetVilla.jpg')} style={styleFull.cardImage} />
       <View>
@@ -249,37 +255,59 @@ function PropertyList() {
         </View>
       </View>
     </View>
+    </ImageBackground>
+    
   </ScrollView>
+  )
+}
+
+function HomePage(){
+  return(
+<View style={{ flex: 1 }}>
+      <View style={{ flex: 2 }}>
+        <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
+          <View style={{ flex: 1, opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90, justifyContent: 'center',
+    alignItems: 'center', }}>
+            <Image source={require('./img/WanderlustLogo.png')} style={{height: 220, width: 220 ,borderRadius: 110, resizeMode: 'contain'}}/>
+          </View>
+        </ImageBackground>
+      </View>
+      <View style={{ flex: 3}}>
+        <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
+          We want to bring dreams on earth by letting you rent ours property
+        </Text>
+      </View>
+    </View>
+  )
 }
 
 export default function App() {
-  return
-  <View style={{flex: 1}}>
-        <View style={{ flex: 1 }}>
-      <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
-        <View style={{ flex: 3, backgroundColor: 'ivory', opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90 }}>
-          <Text style={{ flex: 1, height: 'auto', textAlign: 'center', fontSize: 32, fontWeight: 'bold', marginTop: 40 }}>
-            We are
-          </Text>
-          <Text style={{ flex: 1, textAlign: 'center', fontSize: 40, fontWeight: '900', color: 'steelblue', marginTop: -40,marginBottom:40 }}>
-            Wanderlust
-          </Text>
-        </View>
-      </ImageBackground>
-      </View>
-      <View style={{flex:3}}>
-      <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-            We want to bring dreams on earth by letting you rent ours property
-          </Text>
-      </View>
-    </View>
+  return (
+    <NavigationContainer>
+<Tab.Navigator>
+      <Tab.Screen name="Home" component={HomePage} options={{tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }
+    }/>
+      <Tab.Screen name="Houses" component={PropertyList} options={{tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="map-marker-multiple" color={color} size={26} />
+          ),
+        }
+    }/>
+    </Tab.Navigator>
+    </NavigationContainer>
+    
+  )
 }
+
+
 
 const style = StyleSheet.create({
   scrollview: {
     flex: 1,
     background: './img/artwork-2.png',
-  },
+    },
   card: {
     flexDirection: 'row',
     backgroundColor: 'white',
