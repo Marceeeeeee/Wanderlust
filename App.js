@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button, Pressable } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button, Pressable, FlatList } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -38,6 +38,12 @@ function Home() {
         ),
       }
       } />
+      <Tab.Screen name="Rented" component={RentedProperties} options={{
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="map-marker-multiple" color={color} size={26} />
+        ),
+      }
+      }/>
     </Tab.Navigator>
   )
 }
@@ -362,6 +368,28 @@ function PropertyDetail({ route, navigation }) {
       </View>
     </View>
 
+  )
+}
+
+function RentedProperties(){
+  return(
+    <View style={{flex: 1}}>
+      <FlatList
+        data={[
+          {key: 'Devin'},
+          {key: 'Dan'},
+          {key: 'Dominic'},
+          {key: 'Jackson'},
+          {key: 'James'},
+          {key: 'Joel'},
+          {key: 'John'},
+          {key: 'Jillian'},
+          {key: 'Jimmy'},
+          {key: 'Julie'},
+        ]}
+        renderItem={({item}) => <Text style={style.cardText}>{item.key}</Text>}
+      />
+    </View>
   )
 }
 
