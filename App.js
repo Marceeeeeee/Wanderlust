@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button, Pressable, FlatList } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -9,6 +9,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const data= [
+  {
+    "id": 99,
+    "title": 'foo',
+    "body": 'bar',
+    "userId": 1
+  },
+  {
+    "id": 100,
+    "title": 'foo',
+    "body": 'bar',
+    "userId": 1
+  }
+]
 
 export default function App() {
   return (
@@ -17,6 +31,7 @@ export default function App() {
         <Stack.Screen name="HomePage" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="Property List Home" component={PropertyListHome} options={{ headerShown: false }} />
         <Stack.Screen name="Property detail" component={PropertyDetail} options={{ headerShown: false }} />
+        <Stack.Screen name="Rented" component={RentedProperties} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
 
@@ -362,32 +377,15 @@ function PropertyDetail({ route, navigation }) {
       <View style={styleDetailScreen.view}>
         <Text style={styleDetailScreen.text}>{JSON.parse(JSON.stringify(houseName))}</Text>
         <Text style={styleDetailScreen.description}>A quaint suburban abode, this two-story house exudes charm with its white picket fence and well-kept lawn. Inside, the bright living room and modern kitchen offer comfort, while cozy bedrooms provide a retreat. A perfect blend of classic aesthetics and modern living.</Text>
-        <Pressable style={styleDetailScreen.rent} onPress={API}>
+        <Pressable style={styleDetailScreen.rent} onPress={() => console.log(API(houseName))}>
           <Text style={styleDetailScreen.price}>2000/day</Text>
         </Pressable>
       </View>
     </View>
-
   )
 }
 
-const data= [
-    {
-      id: 99,
-      title: 'foo',
-      body: 'bar',
-      userId: 1
-    },
-    {
-      id: 100,
-      title: 'foo',
-      body: 'bar',
-      userId: 1
-    }
-]
-
-function API(houseName){
-  fetch('https://jsonplaceholder.typicode.com/posts', {
+async function API (houseName) {(await fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
     title: houseName,
@@ -398,18 +396,19 @@ function API(houseName){
     'Content-type': 'application/json; charset=UTF-8',
   },
 })
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-
-
-  data.add(response)
-}
+.then((response) => response.json())
+.then((responseData) => {
+  console.log(JSON.stringify(responseData));
+})
+.done())
+ console.log(data) }
 
 function RentedProperties(){
+  const [exampleState, setExampleState] = useState(data)
   return(
     <View style={{flex: 1}}>
       <FlatList
-        data={data}
+        data={exampleState}
         renderItem={({item}) => <Text style={style.cardText}>{item.title}</Text>}
       />
     </View>
