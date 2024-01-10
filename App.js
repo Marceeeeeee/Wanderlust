@@ -10,6 +10,90 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomePage" component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name="Property List Home" component={PropertyListHome} options={{ headerShown: false }} />
+        <Stack.Screen name="Property detail" component={PropertyDetail} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  )
+}
+
+function Home() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomePage} options={{
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26} />
+        ),
+      }
+      } />
+      <Tab.Screen name="Houses" component={PropertyListHome} options={{
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="map-marker-multiple" color={color} size={26} />
+        ),
+      }
+      } />
+    </Tab.Navigator>
+  )
+}
+
+function HomePage() {
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 2 }}>
+        <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
+          <View style={{
+            flex: 1, opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90, justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <Image source={require('./img/WanderlustLogo.png')} style={{ height: 220, width: 220, borderRadius: 110, resizeMode: 'contain' }} />
+          </View>
+        </ImageBackground>
+      </View>
+      <View style={{ flex: 3 }}>
+        <ImageBackground source={require('./img/artwork-2.png')} style={{ flex: 1 }}>
+          <View style={style.homecard}>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 30, marginStart: 10, marginEnd: 10, marginTop: 10 }}>
+              We are Wanderlust
+            </Text>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
+              We want to bring dreams on earth by letting you rent ours property
+            </Text>
+          </View>
+          <View style={style.homecard}>
+            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
+              Balance
+            </Text>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
+              Your curret balance is:
+            </Text>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
+              34.567,97$
+            </Text>
+          </View>
+          <View style={style.homecard}>
+            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
+              Expences
+            </Text>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
+              Your curret outgoings are:
+            </Text>
+            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
+              3.072,23$
+            </Text>
+          </View>
+          <View style={{ height: 24 }}></View>
+        </ImageBackground>
+      </View>
+    </View>
+  )
+}
+
 function PropertyListHome({ navigation }) {
   return (
     <ScrollView style={style.scrollview}>
@@ -281,92 +365,6 @@ function PropertyDetail({ route, navigation }) {
   )
 }
 
-function Home() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomePage} options={{
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="home" color={color} size={26} />
-        ),
-      }
-      } />
-      <Tab.Screen name="Houses" component={PropertyListHome} options={{
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="map-marker-multiple" color={color} size={26} />
-        ),
-      }
-      } />
-    </Tab.Navigator>
-  )
-}
-
-function HomePage() {
-  return (
-    <View style={{ flex: 1 }}>
-      <View style={{ flex: 2 }}>
-        <ImageBackground source={require('./img/BackgroungLogo.jpg')} style={{ flex: 1 }}>
-          <View style={{
-            flex: 1, opacity: 0.95, borderRadius: 20, margin: 55, marginBottom: 70, marginTop: 90, justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-            <Image source={require('./img/WanderlustLogo.png')} style={{ height: 220, width: 220, borderRadius: 110, resizeMode: 'contain' }} />
-          </View>
-        </ImageBackground>
-      </View>
-      <View style={{ flex: 3 }}>
-        <ImageBackground source={require('./img/artwork-2.png')} style={{ flex: 1 }}>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 30, marginStart: 10, marginEnd: 10, marginTop: 10 }}>
-              We are Wanderlust
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              We want to bring dreams on earth by letting you rent ours property
-            </Text>
-          </View>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
-              Balance
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-              Your curret balance is:
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              34.567,97$
-            </Text>
-          </View>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
-              Expences
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-              Your curret outgoings are:
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              3.072,23$
-            </Text>
-          </View>
-          <View style={{ height: 24 }}></View>
-        </ImageBackground>
-      </View>
-    </View>
-  )
-}
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="HomePage" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="Property List Home" component={PropertyListHome} options={{ headerShown: false }} />
-        <Stack.Screen name="Property detail" component={PropertyDetail} options={{ headerShown: false }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-
-  )
-}
-
-
-
 const style = StyleSheet.create({
   homecard: {
     flex: 1,
@@ -489,27 +487,27 @@ const styleDetailScreen = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'white'
   },
-  text:{
-    fontSize: 26, 
-    marginStart: 24, 
-    marginEnd: 10, 
+  text: {
+    fontSize: 26,
+    marginStart: 24,
+    marginEnd: 10,
     marginTop: 5,
     fontWeight: 'bold',
   },
-  description:{
-    fontSize:18,
+  description: {
+    fontSize: 18,
     margin: 16,
   },
-  rent:{
+  rent: {
     height: 50,
     width: 160,
-    backgroundColor: 'cyian',
+    backgroundColor: 'cyan',
     marginStart: '50%',
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  price:{
+  price: {
     fontSize: 20,
     fontWeight: '600'
   }
