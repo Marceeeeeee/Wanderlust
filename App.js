@@ -362,7 +362,7 @@ function PropertyDetail({ route, navigation }) {
       <View style={styleDetailScreen.view}>
         <Text style={styleDetailScreen.text}>{JSON.parse(JSON.stringify(houseName))}</Text>
         <Text style={styleDetailScreen.description}>A quaint suburban abode, this two-story house exudes charm with its white picket fence and well-kept lawn. Inside, the bright living room and modern kitchen offer comfort, while cozy bedrooms provide a retreat. A perfect blend of classic aesthetics and modern living.</Text>
-        <Pressable style={styleDetailScreen.rent}>
+        <Pressable style={styleDetailScreen.rent} onPress={API}>
           <Text style={styleDetailScreen.price}>2000/day</Text>
         </Pressable>
       </View>
@@ -371,23 +371,46 @@ function PropertyDetail({ route, navigation }) {
   )
 }
 
+const data= [
+    {
+      id: 99,
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    },
+    {
+      id: 100,
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }
+]
+
+function API(houseName){
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: houseName,
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+
+  data.add(response)
+}
+
 function RentedProperties(){
   return(
     <View style={{flex: 1}}>
       <FlatList
-        data={[
-          {key: 'Devin'},
-          {key: 'Dan'},
-          {key: 'Dominic'},
-          {key: 'Jackson'},
-          {key: 'James'},
-          {key: 'Joel'},
-          {key: 'John'},
-          {key: 'Jillian'},
-          {key: 'Jimmy'},
-          {key: 'Julie'},
-        ]}
-        renderItem={({item}) => <Text style={style.cardText}>{item.key}</Text>}
+        data={data}
+        renderItem={({item}) => <Text style={style.cardText}>{item.title}</Text>}
       />
     </View>
   )
