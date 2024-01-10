@@ -40,7 +40,7 @@ function Home() {
       } />
       <Tab.Screen name="Rented" component={RentedProperties} options={{
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="map-marker-multiple" color={color} size={26} />
+          <MaterialCommunityIcons name="wallet-travel" color={color} size={26} />
         ),
       }
       }/>
