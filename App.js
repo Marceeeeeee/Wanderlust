@@ -1,28 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button, Pressable, FlatList } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button, Pressable, FlatList, ActivityIndicator } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Dropdown } from 'react-native-element-dropdown';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-const data= [
-  {
-    "id": 99,
-    "title": 'foo',
-    "body": 'bar',
-    "userId": 1
-  },
-  {
-    "id": 100,
-    "title": 'foo',
-    "body": 'bar',
-    "userId": 1
-  }
-]
+const datas = [
+  { label: 'Sunset Villa', value: '1' },
+  { label: 'Blue Sky Bungalow', value: '2' },
+  { label: 'Cherry Blossom Cottage', value: '3' },
+  { label: 'Enchanted Echoes Home', value: '4' },
+  { label: 'Hearthstone Have', value: '5' },
+  { label: 'Orchid Oasis', value: '6' },
+  { label: 'Seaside Serenity Cottage', value: '7' },
+];
 
 export default function App() {
   return (
@@ -385,7 +382,21 @@ function PropertyDetail({ route, navigation }) {
   )
 }
 
-async function API (houseName) {(await fetch('https://jsonplaceholder.typicode.com/posts', {
+
+
+function RentedProperties(){
+
+  var data = [
+    { label: 'VelvetValleyVilla', value: '1' },
+    { label: 'Secret Garden ', value: '2' },
+    { label: 'Whispering Willow House', value: '3' },
+  ];
+
+  const [isLoading, setLoading] = useState(false);
+  const [value, setValue] = useState(null);
+  const [exampleState, setExampleState] = useState(data);
+
+  async function API (houseName) {(await fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
     title: houseName,
@@ -399,18 +410,55 @@ async function API (houseName) {(await fetch('https://jsonplaceholder.typicode.c
 .then((response) => response.json())
 .then((responseData) => {
   console.log(JSON.stringify(responseData));
+  setLoading(false)
 })
 .done())
- console.log(data) }
+}
 
-function RentedProperties(){
-  const [exampleState, setExampleState] = useState(data)
+function AddElement(name) {
+  API(name.label)
+  console.log(name)
+  console.log(data.toString())
+  data.push(name);
+  console.log(data.toString())
+  setExampleState(data)
+  console.log(exampleState)
+};
+
   return(
     <View style={{flex: 1}}>
+      <View style={{height: 30}}></View>
+      <Dropdown
+      style={style. dropdown}
+      placeholderStyle={style.placeholderStyle}
+      selectedTextStyle={style.selectedTextStyle}
+      inputSearchStyle={style.inputSearchStyle}
+      iconStyle={style.iconStyle}
+      data={datas}
+      search
+      maxHeight={300}
+      labelField="label"
+      valueField="value"
+      placeholder="Select item"
+      searchPlaceholder="Search..."
+      value={value}
+      onChange={item => {
+        setLoading(true)
+        setValue(item.label);
+        console.log(item.label)
+        AddElement({label: item.label, value: '3'})
+      }}
+      renderLeftIcon={() => (
+        <AntDesign style={style.icon} color="black" name="Safety" size={20} />
+      )}
+    />
+    {
+      isLoading ? (<ActivityIndicator />) :
       <FlatList
         data={exampleState}
-        renderItem={({item}) => <Text style={style.cardText}>{item.title}</Text>}
+        renderItem={({item}) => <Text style={style.cardText}>{item.label}</Text>}
       />
+    }
     </View>
   )
 }
@@ -458,6 +506,29 @@ const style = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: 'orange',
     alignContent: 'center'
+  },
+  dropdown: {
+    margin: 16,
+    height: 50,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  },
+  icon: {
+    marginRight: 5,
+  },
+  placeholderStyle: {
+    fontSize: 16,
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
   },
 })
 
