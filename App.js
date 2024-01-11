@@ -411,8 +411,7 @@ function RentedProperties(){
 .then((responseData) => {
   console.log(JSON.stringify(responseData));
   setLoading(false)
-})
-.done())
+}))
 }
 
 function AddElement(name) {
