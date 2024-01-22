@@ -2,14 +2,6 @@ import { StyleSheet } from 'react-native';
 
 
 export const style = StyleSheet.create({
-  homecard: {
-    flex: 1,
-    marginTop: 24,
-    marginStart: 24,
-    marginEnd: 24,
-    backgroundColor: 'white',
-    borderRadius: 24
-  },
   scrollview: {
     flex: 1,
     background: './img/artwork-2.png',
@@ -44,29 +36,6 @@ export const style = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: 'orange',
     alignContent: 'center'
-  },
-  dropdown: {
-    margin: 16,
-    height: 50,
-    borderBottomColor: 'gray',
-    borderBottomWidth: 0.5,
-  },
-  icon: {
-    marginRight: 5,
-  },
-  placeholderStyle: {
-    fontSize: 16,
-  },
-  selectedTextStyle: {
-    fontSize: 16,
-  },
-  iconStyle: {
-    width: 20,
-    height: 20,
-  },
-  inputSearchStyle: {
-    height: 40,
-    fontSize: 16,
   },
 });
 
@@ -180,4 +149,78 @@ export const styleDetailScreen = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+});
+
+export const styleRented = StyleSheet.create({
+  rentproperty: {
+    height: 140, 
+    backgroundColor: 'white',
+    margin: 24,
+    borderRadius: 20,
+  },
+  title: {
+    marginStart: 16,
+    marginTop: 16,
+    fontSize: 16,
+  },
+  dropdown: {
+    marginTop: 12,
+    marginStart: 20,
+    marginEnd: 20,
+    height: 50,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  },
+  icon: {
+    marginRight: 5,
+  },
+  placeholderStyle: {
+    marginStart: 10,
+    fontSize: 16,
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
+  },
+  listView: {
+    borderRadius: 24,
+    flex: 1, 
+    backgroundColor: 'white',
+    marginBottom: -24,
+  },
+  card: {
+    backgroundColor: 'lightsteelblue',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 24
+  },
+  description: {
+    alignSelf: 'flex-end',
+    backgroundColor: 'lawngreen',
+    width: 100,
+    borderRadius: 16
+  },
+  houseName: {
+    fontSize: 18,
+    fontWeight: '600'
+  }
+});
+
+export const styleHome = StyleSheet.create({
+  homecard: {
+    marginTop: 24,
+    marginStart: 24,
+    marginEnd: 24,
+    backgroundColor: 'white',
+    borderRadius: 24,
+  },
+  
 });

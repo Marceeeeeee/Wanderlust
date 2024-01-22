@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList, ActivityIndicator } from 'react-native';
+import { Text, View, FlatList, ActivityIndicator, ImageBackground } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { style } from './style';
+import { style, styleRented } from './style';
 
 const datas = [
   { label: 'Sunset Villa', value: '1' },
@@ -56,14 +56,16 @@ export function RentedProperties() {
   };
 
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ height: 30 }}></View>
-      <Dropdown
-        style={style.dropdown}
-        placeholderStyle={style.placeholderStyle}
-        selectedTextStyle={style.selectedTextStyle}
-        inputSearchStyle={style.inputSearchStyle}
-        iconStyle={style.iconStyle}
+    <ImageBackground source={require('./img/artwork-2.png')} style={{ flex: 1 }}>
+      <View style={{ height: 38 }}></View>
+      <View style={styleRented.rentproperty}>
+        <Text style={styleRented.title}>Rent a property:</Text>
+        <Dropdown
+        style={styleRented.dropdown}
+        placeholderStyle={styleRented.placeholderStyle}
+        selectedTextStyle={styleRented.selectedTextStyle}
+        inputSearchStyle={styleRented.inputSearchStyle}
+        iconStyle={styleRented.iconStyle}
         data={datas}
         search
         maxHeight={300}
@@ -79,12 +81,25 @@ export function RentedProperties() {
           AddElement({ label: item.label, value: '3' });
         }}
         renderLeftIcon={() => (
-          <AntDesign style={style.icon} color="black" name="Safety" size={20} />
+          <AntDesign style={style.icon} color="black" name="carryout" size={20} />
         )} />
+      </View>
+      <View style= {styleRented.listView}>
       {isLoading ? (<ActivityIndicator />) :
-        <FlatList
-          data={exampleState}
-          renderItem={({ item }) => <Text style={style.cardText}>{item.label}</Text>} />}
-    </View>
+      <FlatList
+        style={{marginTop: 12}}
+        data={exampleState}
+        renderItem={({ item }) => 
+        <View style= {styleRented.card}>
+          <Text style= {styleRented.houseName}>{item.label}</Text>
+          <View style={styleRented.description}>
+              <Text style={{ margin: 5, marginStart: 28 }}>
+                rented
+              </Text>
+            </View>
+        </View>
+        } />}
+      </View>
+    </ImageBackground>
   );
 }

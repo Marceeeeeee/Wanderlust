@@ -1,7 +1,24 @@
 import React from 'react';
-import { Image, ImageBackground, Text, View } from 'react-native';
-import { style } from './style';
+import { Image, ImageBackground, Text, View, FlatList } from 'react-native';
+import { style, styleHome, styleRented } from './style';
 
+const homecards = [
+  {
+    title: "We are wanderlust",
+    description: "We want to bring dreams on earth by letting you rent ours property",
+    import: "",
+  },
+  {
+    title: "Balance",
+    description: "Your curret balance is:",
+    import: "34.567,76$",
+  },
+  {
+    title: "Expences",
+    description: "Your currets outgoings are:",
+    import: "2.763,12$",
+  }
+]
 
 export function HomePage() {
   return (
@@ -18,36 +35,22 @@ export function HomePage() {
       </View>
       <View style={{ flex: 3 }}>
         <ImageBackground source={require('./img/artwork-2.png')} style={{ flex: 1 }}>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 30, marginStart: 10, marginEnd: 10, marginTop: 10 }}>
-              We are Wanderlust
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              We want to bring dreams on earth by letting you rent ours property
-            </Text>
-          </View>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
-              Balance
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-              Your curret balance is:
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              34.567,97$
-            </Text>
-          </View>
-          <View style={style.homecard}>
-            <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
-              Expences
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-              Your curret outgoings are:
-            </Text>
-            <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, marginTop: -20 }}>
-              3.072,23$
-            </Text>
-          </View>
+        <FlatList
+              style={{ marginTop: 12 }}
+              data={homecards}
+              renderItem={({ item }) =>
+              <View style={styleHome.homecard}>
+              <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
+                {item.title}
+              </Text>
+              <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
+                {item.description}
+              </Text>
+              <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, color: 'green', fontWeight: 'bold' }}>
+                {item.import}
+              </Text>
+            </View>
+              } />
           <View style={{ height: 24 }}></View>
         </ImageBackground>
       </View>
