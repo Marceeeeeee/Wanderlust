@@ -6,6 +6,7 @@ import { Home } from './Home';
 import { PropertyListHome } from './PropertyListHome';
 import { PropertyDetail } from './PropertyDetail';
 import { RentedProperties } from './RentedProperties';
+import { HomeCardDetail } from './HomeCardDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Screen name="Property List Home" component={PropertyListHome} options={{ headerShown: false }} />
         <Stack.Screen name="Property detail" component={PropertyDetail} options={{ headerShown: false }} />
         <Stack.Screen name="Rented" component={RentedProperties} options={{ headerShown: false }} />
+        <Stack.Screen name="Homecard Detail" component={HomeCardDetail} />
       </Stack.Navigator>
     </NavigationContainer>
 

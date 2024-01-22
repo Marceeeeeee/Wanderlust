@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, Text, View, FlatList } from 'react-native';
+import { Image, ImageBackground, Text, View, FlatList, Pressable } from 'react-native';
 import { style, styleHome, styleRented } from './style';
 
 const homecards = [
@@ -20,7 +20,7 @@ const homecards = [
   }
 ]
 
-export function HomePage() {
+export function HomePage({ navigation }) {
   return (
     <View style={{ flex: 1 }}>
       <View style={{ flex: 2 }}>
@@ -35,25 +35,27 @@ export function HomePage() {
       </View>
       <View style={{ flex: 3 }}>
         <ImageBackground source={require('./img/artwork-2.png')} style={{ flex: 1 }}>
-        <FlatList
-              style={{ marginTop: 12 }}
-              data={homecards}
-              renderItem={({ item }) =>
-              <View style={styleHome.homecard}>
-              <Text style={{ flex: 1, fontSize: 26, marginStart: 24, marginEnd: 10, marginTop: 5 }}>
-                {item.title}
-              </Text>
-              <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10 }}>
-                {item.description}
-              </Text>
-              <Text style={{ flex: 1, textAlign: 'center', fontSize: 16, marginStart: 10, marginEnd: 10, color: 'green', fontWeight: 'bold' }}>
-                {item.import}
-              </Text>
-            </View>
-              } />
+          <FlatList
+            style={{ marginTop: 12 }}
+            data={homecards}
+            renderItem={({ item }) =>
+              <Pressable style={styleHome.homecard} onPress={() => navigation.navigate('Homecard Detail', { title: item.title, description: item.description, value: item.import }) }>
+                <Text style={styleHome.title}>
+                  {item.title}
+                </Text>
+                <Text style={styleHome.description}>
+                  {item.description}
+                </Text>
+                <Text style={styleHome.value}>
+                  {item.import}
+                </Text>
+              </Pressable>
+            } />
           <View style={{ height: 24 }}></View>
         </ImageBackground>
       </View>
     </View>
   );
 }
+
+

@@ -153,7 +153,7 @@ export const styleDetailScreen = StyleSheet.create({
 
 export const styleRented = StyleSheet.create({
   rentproperty: {
-    height: 140, 
+    height: 140,
     backgroundColor: 'white',
     margin: 24,
     borderRadius: 20,
@@ -191,7 +191,7 @@ export const styleRented = StyleSheet.create({
   },
   listView: {
     borderRadius: 24,
-    flex: 1, 
+    flex: 1,
     backgroundColor: 'white',
     marginBottom: -24,
   },
@@ -222,5 +222,51 @@ export const styleHome = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 24,
   },
-  
+  title: {
+    fontSize: 26,
+    marginStart: 24,
+    marginEnd: 10,
+    marginTop: 5
+  },
+  description: {
+    textAlign: 'center',
+    fontSize: 16,
+    marginStart: 10,
+    marginEnd: 10
+  },
+  value: {
+    textAlign: 'center',
+    fontSize: 16,
+    marginStart: 10,
+    marginEnd: 10,
+    marginBottom: 12,
+    color: 'green',
+    fontWeight: 'bold'
+  }
 });
+
+export const styleHomeCardDetail = StyleSheet.create({
+  title: {
+    marginTop: 60,
+    alignSelf: 'center',
+    fontSize: 36,
+    fontWeight: 'bold'
+  },
+  description: {
+    margin: 30,
+    fontSize: 16
+  },
+  currency: {
+    marginTop: 20,
+    alignSelf: 'center',
+    fontSize: 28,
+    fontWeight: 'bold'
+  },
+  number: {
+    textAlign: 'center',
+    fontSize: 28,
+    margin: 20,
+    color: 'green',
+    fontWeight: 'bold'
+  }
+})
