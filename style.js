@@ -169,5 +169,15 @@ export const styleDetailScreen = StyleSheet.create({
   price: {
     fontSize: 20,
     fontWeight: '600'
-  }
+  },
+  back: {
+    height: 50,
+    width: 160,
+    backgroundColor: 'orange',
+    marginStart: '10%',
+    marginTop: 60,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

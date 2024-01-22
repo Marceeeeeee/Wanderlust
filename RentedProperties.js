@@ -2,17 +2,25 @@ import React, { useState } from 'react';
 import { Text, View, FlatList, ActivityIndicator } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { datas } from './App';
 import { style } from './style';
 
+const datas = [
+  { label: 'Sunset Villa', value: '1' },
+  { label: 'Blue Sky Bungalow', value: '2' },
+  { label: 'Cherry Blossom Cottage', value: '3' },
+  { label: 'Enchanted Echoes Home', value: '4' },
+  { label: 'Hearthstone Have', value: '5' },
+  { label: 'Orchid Oasis', value: '6' },
+  { label: 'Seaside Serenity Cottage', value: '7' },
+];
+
+var data = [
+  { label: 'VelvetValleyVilla', value: '1' },
+  { label: 'Secret Garden ', value: '2' },
+  { label: 'Whispering Willow House', value: '3' },
+];
 
 export function RentedProperties() {
-
-  var data = [
-    { label: 'VelvetValleyVilla', value: '1' },
-    { label: 'Secret Garden ', value: '2' },
-    { label: 'Whispering Willow House', value: '3' },
-  ];
 
   const [isLoading, setLoading] = useState(false);
   const [value, setValue] = useState(null);

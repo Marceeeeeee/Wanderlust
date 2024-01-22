@@ -1,10 +1,12 @@
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Tab } from './App';
 import { RentedProperties } from './RentedProperties';
 import { PropertyListHome } from './PropertyListHome';
 import { HomePage } from './HomePage';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
+
+const Tab = createMaterialBottomTabNavigator();
 export function Home() {
   return (
     <Tab.Navigator>
